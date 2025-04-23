@@ -21,7 +21,7 @@ def sum(values):
         total = total+ v
     return total
 
-print(sum(3,6,3,4))
+## test print(sum(3,6,3,4))
 
 # 3.Exception Handling
 age = int(input("Enter your age in years: "))
@@ -42,7 +42,7 @@ while age <= 0:
 for j in range(10):
     print(j)
 
-list(d.values())
+# list(id.values())
 # Define a dictionary
 student = {
     "name": "Alice",
@@ -66,6 +66,7 @@ price_list = list(prices.values())  # [1.0, 0.5, 0.75]
     #     Looping over it (for loop)
     #     Converting it to a list (list())
     #     Manually fetching values with next()
+
 def factors(n): # traditional function that computes factors
     results = [ ] # store factors in a new list
     for k in range(1,n+1): # divides evenly, thus k is a factor
@@ -122,4 +123,28 @@ def squares(n):
     return [k*k for k in range(1,n+1)] 
     
 print(squares(5))
+
+# 10. Simultaneous Assignments - simplifies the presentation of the code:
+j, k = 5, 7
+j,k = k,j
+
+# Simultaneous assignment + generator implementation:
+def fibonacci(x):
+    a,b = 0,1
+    count = 0
+    while count < x:
+        yield a
+        a,b = b, a+b
+        count +=1
+
+print(list(fibonacci(15)))
+
+def fib(y):
+    a,b = 0,1
+    for _ in range(y):
+        yield a
+        a,b = b, a+b
+
+print(list(fib(15)))
+
 
